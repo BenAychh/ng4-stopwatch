@@ -42,8 +42,10 @@ export class TimerComponent implements OnInit {
   pauseAndResume() {
     if (this.intervals[this.intervals.length - 1].stop) {
       this.startNewInterval();
+      this.paused = false;
     } else {
       this.intervals[this.intervals.length - 1].stop = Date.now();
+      this.paused = true;
     }
   }
 
