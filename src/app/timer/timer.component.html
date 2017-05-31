@@ -1,0 +1,10 @@
+<p>
+  {{totalTime / 1000}}
+</p>
+<div>
+  <button (click)="start()">Start</button>
+  <div *ngIf="paused !== null">
+    <button (click)="pauseAndResume()">{{ paused ? 'Resume' : 'Pause' }}</button>
+  </div>
+  <button (click)="reset()">Reset</button>
+</div>
