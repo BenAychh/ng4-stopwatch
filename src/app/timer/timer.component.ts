@@ -21,7 +21,7 @@ export class TimerComponent implements OnInit {
   constructor(private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
-    Observable.interval(10).subscribe(this.getTime.bind(this));
+    Observable.interval(10).subscribe(this.updateTime.bind(this));
   }
 
   start() {
@@ -55,7 +55,7 @@ export class TimerComponent implements OnInit {
     });
   }
 
-  private getTime() {
+  private updateTime() {
     this.totalTime = this.intervals.reduce((total, interval: Interval) => {
       const stopTime = interval.stop ? interval.stop : Date.now();
       total += stopTime - interval.start;
