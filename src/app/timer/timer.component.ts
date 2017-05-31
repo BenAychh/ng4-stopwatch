@@ -47,6 +47,7 @@ export class TimerComponent implements OnInit {
     this.paused = null;
     this.totalTime = 0;
     this.intervals = [];
+    this.stopObservable();
   }
 
   pauseAndResume() {
